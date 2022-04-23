@@ -1,0 +1,15 @@
+# Docker compose to run grafana on local host port 3000.
+# Data(grafana dashboards, datasources etc) will persist(on dir `grafana_data`)
+# even if container restarts as volume is used.
+
+version: '3'
+services:
+  grafana:
+    image: grafana/grafana:7.5.3 
+    ports:
+      - '3000:3000'
+    volumes:
+    - './grafana_data:/var/lib/grafana'
+    restart: unless-stopped
+
+

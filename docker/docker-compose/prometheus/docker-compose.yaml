@@ -1,0 +1,15 @@
+# Docker compose to run prometheus on local host port 9090.
+
+version: '3'
+services:
+  prometheus:
+    image: 'prom/prometheus:v2.35.0'
+    ports:
+      - '9090:9090'
+    volumes:
+    - './prometheus_data:/prometheus'
+    # config having targets info
+    - './prom.yaml:/etc/prometheus/prometheus.yml'
+    # alert rules file
+    - './alert-rules.yaml:/etc/prometheus/rules.yaml'
+    restart: unless-stopped

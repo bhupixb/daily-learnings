@@ -1,0 +1,16 @@
+groups:
+  - name: alerting_rules
+    rules:
+    # The below alert is only for demonstration purpose.
+    # In practice you would almost never fire alerts if something is up,
+    #   but rather fire when something is down.
+      - alert: PrometheusisUp
+        expr: |
+          up{job="prometheus_metrics"} == 1
+        for: 1m
+        labels:
+          severity: Normal
+          priority: P5
+        annotations:
+          summary: "Prometheus host {{ $labels.instance }} is up & running"
+          description: "Prometheus host {{ $labels.instance }} is up & running"

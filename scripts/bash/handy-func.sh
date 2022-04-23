@@ -5,10 +5,11 @@ function how() {
     # uncomment below line enable debugging
     # set -x
 
-    local args=$*
+    local tool=$1
+    local query=${@:2}
 
     local cheat_sh_format;
-    cheat_sh_format="$(echo "$args" | sed "s/ /\//g")"
+    cheat_sh_format="$(echo "$query" | sed "s/ /+/g")"
 
-    curl "cheat.sh/${cheat_sh_format}"
+    curl "cheat.sh/${tool}/${cheat_sh_format}"
 }
