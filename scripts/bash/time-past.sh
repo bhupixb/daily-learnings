@@ -3,8 +3,8 @@
 # Print date in local, UTC and unixtimestamp format
 # Tested on OSX
 
-# Usage: bash <file> 1d
-# Above will print time now - 1d
+# Usage: bash <file> [1d, 2M, 3H]
+# Print time 1 day or 2 minutes or 3Hrs ago
 
 function now2() {
     local yellow='\033[0;33m'
@@ -21,5 +21,5 @@ function now2() {
 }
 
 function now() {
-    now2 | column -t -s "=>"
+    now2 "$1" | column -t -s "=>"
 }
