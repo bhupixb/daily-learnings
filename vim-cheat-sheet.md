@@ -53,3 +53,14 @@
 
 ## 14. Delete Current Line and Go to Insert Mode
 - `S` (Shift + S)
+
+## 15. Scroll vertically:
+- **Half-Page Up: Ctrl-u**
+  - This scrolls the document up by half a screen.
+- **Half-Page Down: Ctrl-d**
+  - This scrolls the document down by half a screen.
+- **Full-Page Up: Ctrl-b**
+  - This scrolls a full page up (like pressing the Page Up key).
+- **Full-Page Down: Ctrl-f**
+  - This scrolls a full page down (like pressing the Page Down key).
+
