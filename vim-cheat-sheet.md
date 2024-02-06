@@ -64,3 +64,21 @@
 - **Full-Page Down: Ctrl-f**
   - This scrolls a full page down (like pressing the Page Down key).
 
+## 16. Search regex:
+To search using a regular expression, type:
+
+```vim
+/text.*-end-with
+```
+
+## 17. Replace all:
+- to replace some text abc to xyz use
+```vim
+  $ %s/old/new/g
+```
+## 18. To open side-bar:
+- type `space e`
+- to navigate from side bar to open file or vice versa use `ctrl + h or ctrl + l`
+
+## 19. Execute command on the current open file:
+- `%!<cmd> ` execute the cmd on the current input file and write the response to the same file(without saving).
