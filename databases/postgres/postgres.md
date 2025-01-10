@@ -47,3 +47,62 @@ WHERE c.relkind IN ('r','p','')
 ORDER BY 1,2;
 **************************
 ```
+#### Live and dead tuples
+
+```sql
+SELECT 
+  relname AS table_name, 
+  n_live_tup AS live_rows, 
+  n_dead_tup AS dead_rows 
+FROM 
+  pg_stat_user_tables 
+WHERE 
+  relname = 'TABLE_NAME_HERE';
+```
+
+#### Vaccuum time
+
+```sql
+SELECT 
+  relname AS table_name, 
+  last_vacuum, 
+  last_autovacuum 
+FROM 
+  pg_stat_user_tables 
+WHERE 
+  relname = 'TABLE_NAME_HERE';
+```
+
+#### Query to List Idle or Idle in Transaction Queries
+
+```sql
+SELECT
+    pid,
+    usename AS user_name,
+    datname AS database_name,
+    state,
+    now() - xact_start AS transaction_duration,
+    backend_xmin AS xmin_snapshot,
+    wait_event,query
+FROM
+    pg_stat_activity
+WHERE
+    state IN ('active', 'idle in transaction');
+```
+
+#### Query to Monitor Index Creation Progress
+
+```sql
+SELECT 
+    relname AS table_name,
+    indexrelname AS index_name,
+    phase,
+    tuples_done,
+    tuples_total,
+    ROUND(100.0 * tuples_done / GREATEST(tuples_total, 1), 2) AS progress_percentage
+FROM 
+    pg_stat_progress_create_index
+WHERE indexrelname = 'INDEX_NAME_HERE'
+ORDER BY 
+    progress_percentage DESC;
+```
