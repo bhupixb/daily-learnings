@@ -1,0 +1,40 @@
+title: Tmux Cheatsheet
+sections:
+  - section: Start Tmux
+    commands:
+      - description: Start tmux
+        command: tmux
+  - section: Reload Config
+    commands:
+      - description: Reload config file
+        command: tmux source ~/.config/tmux/tmux.conf
+  - section: Panes
+    commands:
+      - description: New pane
+        command: <prefix>
+      - description: Zoom a pane
+        command: <prefix> z
+      - description: Split pane vertically
+        command: <prefix> %
+      - description: Split pane horizontally
+        command: <prefix> "
+      - description: Switch pane with ID
+        command: <prefix> q <pane-id>
+      - description: Switch pane with arrow keys
+        command: <prefix> [up/down/left/right]
+      - description: Move pane left
+        command: <prefix> {
+      - description: Move pane right
+        command: <prefix> }
+      - description: Convert pane to window
+        command: <prefix> !
+      - description: Maximize pane to full or vice versa
+        command:  <prefix> z
+  - section: Sessions & Windows
+    commands:
+      - description: Preview sessions
+        command: <prefix> s
+      - description: Preview windows
+        command: <prefix> w
+      - description: Attach to a session
+        command: tmux attach -t <session-name>
