@@ -30,6 +30,8 @@ sections:
         command: <prefix> !
       - description: Maximize pane to full or vice versa
         command:  <prefix> z
+      - description: Detach session if inside a tmux
+        command:  <prefix> d
   - section: Sessions & Windows
     commands:
       - description: Preview sessions
