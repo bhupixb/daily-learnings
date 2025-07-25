@@ -49,8 +49,8 @@ ORDER BY ID
 - `slackdump archive --help`: Displays help for archive commands.
 - `slackdump archive <channel_id>`: Archives the specified channel.
 - `slackdump archive -files=false -o <output_directory> <channel_id>`: Archives the specified channel without files to the specified directory.
-- `slackdump archive -files=false -time-from <timestamp> -o <output_directory> <channel_id>`: Archives the specified channel without files from a specific time to the specified directory.
-- `slackdump archive -files=false -time-from <timestamp> -o <output_directory> <channel_id>/<message_id>`: Archives a specific message in a channel without files from a specific time to the specified directory.
+- `slackdump archive -files=false -time-from 2024-01-01T00:00:00 -o <output_directory> <channel_id>`: Archives the specified channel without files from a specific time to the specified directory.
+- `slackdump archive -files=false -time-from 2024-01-01T00:00:00 -o <output_directory> <channel_id>/<message_id>`: Archives a specific message in a channel without files from a specific time to the specified directory.
 
 ## List
 
